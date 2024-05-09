@@ -1,0 +1,303 @@
+%设置页面边距（word标准页面）
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\geometry{a4paper,left=2.7cm,right=2.7cm,top=2.54cm,bottom=2.54cm}
+
+%导入ctex包
+\usepackage[UTF8,heading=true]{ctex}
+
+%设置摘要格式
+\usepackage{abstract}
+\setlength{\abstitleskip}{0em}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+\setlength{\absparsep}{0em}
+\renewcommand{\abstractname}{\textbf{\zihao{4}{摘要}}}
+\renewcommand{\abstracttextfont}{\zihao{-4}} %设置摘要正文字号
+
+%设置页眉和页脚，只显示页脚居中页码
+\usepackage{fancyhdr}
+\pagestyle{plain}
+
+%调用数学公式包
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+%调用浮动包
+\usepackage{float}
+\usepackage{subfig}
+\captionsetup[figure]{labelsep=space} %去除图标题的冒号
+\captionsetup[table]{labelsep=space} %去除表格标题的冒号
+%设置标题格式
+\ctexset {
+	%设置一级标题的格式
+	section = {
+		name={,、},
+		number=\chinese{section}, %设置中文版的标题
+		aftername=,
+	},
+	%设置三级标题的格式
+	subsubsection = {
+		format += \zihao{-4} % 设置三级标题的字号
+	}
+}
+
+
+%使得英文字体都为Time NewTown
+%\usepackage{times}
+
+%图片包导入
+\usepackage{graphicx}
+\graphicspath{{figures/}} %图片在当前目录下的figures目录
+
+%参考文献包引入
+\usepackage{cite}
+\usepackage[numbers,sort&compress]{natbib}
+
+%代码格式
+\usepackage{listings}
+\usepackage{graphicx}%写入python代码
+\usepackage{pythonhighlight}%python代码高亮显示
+\lstset{
+	%numbers=left, %设置行号位置
+	%	numberstyle=\tiny, %设置行号大小
+	keywordstyle=\color{blue}, %设置关键字颜色
+	commentstyle=\color[cmyk]{1,0,1,0}, %设置注释颜色
+	escapeinside=``, %逃逸字符(1左面的键)，用于显示中文
+	breaklines, %自动折行
+	extendedchars=false, %解决代码跨页时，章节标题，页眉等汉字不显示的问题
+	xleftmargin=1em,xrightmargin=1em, aboveskip=1em, %设置边距
+	tabsize=4, %设置tab空格数
+	showspaces=false %不显示空格
+}
+
+
+\renewcommand{\refname}{}
+
+%item包
+\usepackage{enumitem}
+
+%表格加粗
+\usepackage{booktabs}
+
+%设置表格间距
+\usepackage{caption}
+
+%允许表格长跨页
+\usepackage{longtable}
+
+%伪代码用到的宏包
+\usepackage{algorithmic}
+\usepackage{algorithm}
+
+%正文区
+\title{异常检测} 
+\date{} %不显示日期
+
+%文档
+\begin{document}
+	\maketitle
+	\vspace{0em} %设置摘要与标题的间距
+	\zihao{-4} %设置正文字号
+	%摘要部分
+	\begin{abstract}
+		
+		\textbf{针对问题一}，...
+		
+		\textbf{针对问题二}，...
+		
+		\textbf{针对问题三}，...
+		\\
+		%关键词（上文最后一段要用“\\”换行）
+		\newline
+		\noindent{\textbf{关键词：} \textbf{关键词1}\quad   \textbf{关键词2}\quad \textbf{关键词3} \quad \textbf{关键词4}\quad \textbf{关键词5}} 
+	\end{abstract}
+	
+	\clearpage %换页
+	
+	%正文部分
+	%Part one
+	\section{引言}
+	\subsection{研究背景}
+	异常检测指不匹配预期值或数据集中的事件、观测值的识别，是数据分析与机器学习的一个重要分支，也称为离群点、噪声。异常值的形成可能是由数据收集错误、测量错误或罕见事件造成。异常数据点可应用于问题的识别与解决、改善数据、降低风险、优化决策等等，在金融行业、互联网、工业生产、生物信息、医疗等领域有不可忽视的作用。
+	
+	目前的异常检测思路可分为三大类：基于统计方法、基于机器学习算法和基于规则检验。主流的异常检测方法有基于密度的方法、基于距离的方法、基于聚类的K最近邻算法和局部异常因子算法、一类支持向量机、神经网络、随机森林等等。以上方法各有优劣，如统计学的HBOS在全局异常检测问题上表现良好，且速度比标准算法快，但检测局部异常值效果较差；基于距离的方法对参数K和阈值敏感；随机森林在解决回归问题时可能出现过度拟合等等。
+	
+	%\begin{figure}[H]
+	%	\centering %图片居中
+	%	\captionsetup{skip=4pt} % 设置标题与表格的间距为4pt
+	%	\includegraphics[width=10cm]{图片文件名} %width设置图片大小
+	%	\caption{商超蔬菜示意图\label{商超蔬菜示意图}} %设置图片的标题及引用标签
+	%\end{figure}
+	
+	\subsection{研究目的和意义}
+	\begin{enumerate}[itemindent=0cm,leftmargin=0em,label=(\roman*)]
+		\item 
+		
+	\end{enumerate}
+	\subsection{研究思路}
+	\subsection{本文创新点}
+	
+	%Part Two
+	\section{文献综述}
+	\subsection{}
+	
+	
+	
+	%Part Three
+	\section{数据生成}
+	%假设的列表
+	\begin{enumerate} 
+		\item 
+	\end{enumerate}
+	
+	%Part Four
+	%浮动体表格，使用table实现
+	\begin{table}[H] %[h]表示在此处添加浮动体，默认为tbf，即页面顶部、底部和空白处添加
+		\captionsetup{skip=4pt} % 设置标题与表格的间距为4pt
+		\centering
+		\setlength{\arrayrulewidth}{2pt} % 设置表格线条宽度为1pt
+		\begin{tabular}{cc} %c表示居中，l表示左对齐，r表示右对齐，中间添加“|”表示竖线
+			\hline
+			\makebox[0.15\textwidth][c]{符号} & \makebox[0.8\textwidth][c]{说明}  \\ 
+			\hline
+			$\alpha_a$ & 动检仪的准确率  \\
+			$\alpha_d$ & 动检仪的检出率   \\
+			$$ &   \\
+			&   \\
+			\hline
+		\end{tabular}
+		% \hline是横线，采用\makebox设置列宽
+	\end{table}
+	
+	
+	%Part Five
+	\section{模型建立}
+	\subsection{降维模型}	
+	\subsubsection{PCA模型}
+	\begin{enumerate}[itemindent=1cm,leftmargin=0em,label=(\Roman*)]
+		\item \textbf{PCA的理论知识}
+		
+		\quad \quad 主成分分析，是一种常用的无监督学习方法，这一方法利用正交变换把由线性相关变量表示的观测数据转换为少数几个由线性无关变量表示的数据，线性无关的变量称为主成分。主成分的个数通常小于原始变量的个数，所以主成分分析属于降维方法。主成分分析主要用于发现数据中的基本结构，即数据中变量之间的关系，是数据分析的有力工具，也用于其他机器学习方法的前处理。统计分析中，数据的变量之间可能存在相关性，以致增加了分析的难度。于是，考虑由少数不相关的变量来代替相关的变量，用来表示数据，并且要求能够保留数据中的大部分信息。主成分分析中，首先对给定数据进行规范化，使得数据每一变量的平均值为0，方差为1。之后对数据进行正交变换，原来由线性相关变量表示的数据，通过正交变换变成由若干个线性无关的新变量表示的数据。新变量是可能的正交变换中变量的方差的和(信息保存)最大的，方差表示在新变量上信息的大小。将新变量依次称为第一主成分、第二主成分等。这就是主成分分析的基本思想。通过主成分分析，可以利用主成分近似地表示原始数据，这可理解为发现数据的“基本结构”;也可以把数据由少数主成分表示，这可理解为对数据降维。
+		\item \textbf{PCA的模型建立}		
+		
+		\textbf{Step 1:将数据整理为矩阵}
+		
+		将n次采样采样的m维数据写成矩阵
+		\begin{equation}  
+			A =
+			\begin{pmatrix}  
+				a_{11} & a_{12} & \cdots & a_{1n} \\  
+				a_{21} & a_{22} & \cdots & a_{2n} \\  
+				\vdots & \vdots & \ddots & \vdots \\  
+				a_{m1} & a_{m2} & \cdots & a_{mn}  
+			\end{pmatrix}  
+		\end{equation} 
+		
+		\textbf{Step 2：规范化数据}
+		
+		对给定数据进行规范化，使得数据每一变量的平均值为0，方差为1，即对矩阵A的每行分别进行零均值化为矩阵B，公式如下：
+		
+		首先分别计算每维数据的均值$\mu_{i},1\leq i\leq m$:
+		\begin{equation}  
+	    \mu_{i} = \frac{1}{n} \sum_{j=1}^{n} x_{ij}
+		\end{equation} 
+		首先分别计算每维数据的方差$\mu_{i},1\leq i\leq m$:
+		\begin{equation}  
+		 \sigma_{i}^2 = \frac{1}{n} \sum_{j=1}^{n} (x_{ij} - \mu_{i})^2 \   
+	    \end{equation} 
+		
+		
+		
+		\textbf{Step 3：计算协方差矩阵}
+		
+		公式如下：
+		
+		\textbf{Step 4：特征值和对应特征向量计算及重排}
+		
+		由以下公式解得特征值（计重根）：
+		由以下公式分别解得每个特征值所对应的特征向量：
+		重排 使，且 与之一一对应（同一下的可随机排列）
+		
+		\textbf{Step 5：决定k值}
+		
+		方差表示在新变量上信息的大小，新变量是可能的正交变换中变量的方差的和(信息保存)最大的。所以，我们有累计方差贡献率这一定义，计算公式如下：
+		当 达到我们期望的阈值时，我们认为这个k值是合适的。
+		
+		\textbf{Step 6：得到中间矩阵C}
+		
+		上一步里我们得到了k值，此时我们取重排后的前k个特征向量，将其按照下面的公式标准化为单位矩阵，依次排列得到中间矩阵C。
+		
+		\textbf{Step 7：计算得到主成分}
+		
+		根据以下公式：
+		计算得到的矩阵A’的的第i列即为第i主成分。
+		
+		
+		
+	\end{enumerate}
+	\subsection{异常检测模型的建立}
+	\subsection{组合模型}			
+	\begin{equation}  
+		k = \frac{\sum_{i=1}^{n} (X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^{n} (X_i - \bar{X})^2}  
+	\end{equation} 
+	
+	\begin{equation}
+		\label{rr}
+		r=\frac{\sum_{i=1}^n\left(X_i-\bar{X}\right)\left(Y_i-\bar{Y}\right)}{\sqrt{\sum_{i=1}^n\left(X_i-\bar{X}\right)^2} \sqrt{\sum_{i=1}^n\left(Y_i-\bar{Y}\right)^2}}
+	\end{equation}
+
+	%Part Six
+	\section{模型效果的检验}
+	\subsection{随机数检验}
+	
+	\subsection{与实际情况的相合性}
+
+	
+	\subsection{与主流异常检测方式的效率比对}
+	\begin{enumerate}
+		\item 
+		\item 
+		\item 
+	\end{enumerate}
+	
+	\section{总结与展望}
+	
+	%Part Seven
+	\section{参考文献}
+	\vspace{-2em} % 减小上面的间距
+	\begin{thebibliography}{9}  
+		\bibitem{ref1} 
+		\bibitem{ref2} 
+		\bibitem{ref3} 
+		\bibitem{ref4}   
+	\end{thebibliography}
+	
+	\newpage
+	\section*{附录}
+	
+	附录1：支撑材料的文件列表
+	
+	
+	附录2：初始化代码和数据处理代码
+	\begin{lstlisting}[language=python,columns=fullflexible,frame=shadowbox]
+		import pandas as pd
+		import warnings
+		import xlwt
+		import numpy as np
+		import matplotlib.pyplot as plt
+		import pylab
+		import seaborn as sns
+		from pylab import mpl
+		from sklearn.preprocessing import PolynomialFeatures
+		from sklearn import linear_model
+		from sklearn.model_selection import train_test_split
+		from sklearn.ensemble import RandomForestRegressor
+		from sklearn import metrics
+		import statsmodels.api as sm
+		import geatpy as ea
+		from scipy import  optimize as opt
+		from scipy.optimize import minimize
+	\end{lstlisting}
+	
+\end{document}
